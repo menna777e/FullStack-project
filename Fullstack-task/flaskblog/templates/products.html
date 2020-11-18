@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+  {% for product in products %}
+  <a href="{{url_for('product',product_id=product.id)}}">
+    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;display: inline-block; margin-left: 40px;">
+      <img class="card-img-top" src="{{ product.img }}" style="height: 230px;;">
+      <div class="card-header">
+        <h2>{{ product.name }}</div></h2>
+    </div>
+  </a>
+  {% endfor %}
+{% endblock content %}
+<!--
+<div class="col-md-4">
+  <div class="content-section" style="background:rgba(61, 58, 58, 0.8);">
+    <h3>Our Sidebar</h3>
+    <p class='text-muted'>You can put any information here you'd like.
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-light" style="background:rgba(61, 58, 58, 0.8)">Latest Posts</li>
+        <li class="list-group-item list-group-item-light" style="background:rgba(61, 58, 58, 0.8)">Announcements</li>
+        <li class="list-group-item list-group-item-light" style="background:rgba(61, 58, 58, 0.8)">Calendars</li>
+        <li class="list-group-item list-group-item-light" style="background:rgba(61, 58, 58, 0.8)">etc</li>
+      </ul>
+    </p>
+  </div>
+</div>
+</div>
+-->

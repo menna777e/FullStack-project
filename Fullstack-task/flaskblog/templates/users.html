@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for user in users %}
+    <a href="{{url_for('user',user_id=user.id)}}">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;display: inline-block; margin-left: 40px;">
+          <img class="card-img-top" src="{{ url_for('static', filename='profiles/' + user.img) }}">
+          <div class="card-header">
+            <h2>{{ user.username }}</div></h2>
+            <p style="text-align: center;">{{ user.email}}</p>
+        </div>
+      </a>
+    {% endfor %}
+{% endblock content %}
